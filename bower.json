@@ -1,0 +1,25 @@
+{
+  "name": "lib",
+  "authors": [
+    "Usama ayub <usamaayub2012@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "angular": "1.4.10",
+    "angular-route": "1.4.10"
+  },
+  "resolutions":{
+    "angular": "1.4.10"
+  }
+}

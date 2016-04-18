@@ -1,0 +1,68 @@
+<nav class="navbar navbar-default navbar-static-top navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Brand</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Admin</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"  aria-expanded="false">
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Admin</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-edit"></span> Edit Profile</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a ng-click="logout()"><span class="glyphicon glyphicon-off"></span> LogOut</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="well">
+    <h1>Add Student's</h1>
+    <div class="container-fluid">
+        <form ng-submit="addStudent(stuData)"  class="form-inline">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" ng-model="stuData.name" class="form-control" placeholder="Name">
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" ng-model="stuData.pass" class="form-control" placeholder="Password">
+            </div>
+            <input type="submit" class="btn bg-success" value="Login">
+        </form>
+    </div>
+</div>
+<h2>Student List's</h2>
+<div>
+    <table class="table table-hover table-bordered">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Password</th>
+            <th>Tasks</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="i in info track by $index">
+            <td  ng-click="viewTask(i)">{{i.name}}</td>
+            <td>{{i.pass}}</td>
+            <td><button ng-click="giveTask($index)" class="btn btn-default"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Tasks</button></td>
+            <td><button ng-click="edit($index)" class="btn btn-default"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit</button></td>
+            <td><button ng-click="delete($index)" class="btn btn-default"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Remove</button></td>
+        </tr>
+        </tbody>
+    </table>
+</div>

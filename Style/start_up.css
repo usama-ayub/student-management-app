@@ -1,0 +1,37 @@
+/*
+.cover{
+    height: 600px;
+    width: 100%;
+   /!* display: block;*!/
+    background-image: url("../images/backgroud.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: #75da9e 1px solid;
+    vertical-align: middle;
+     /!*background-position: center;*!/
+}*/
+main .cover{
+    min-height: 26.90909rem;
+    padding-top: 6.5rem;
+    padding-bottom: 3rem;
+    background-image: url("../images/3.jpg");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-color: #fff;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+    height: 600px;
+    width: 100%;
+}
+.cover h1{
+    font-size: 5.54545rem;
+    line-height: 1;
+    display: block;
+    font-weight: 400;
+    color: #5bbc2e;
+}
+/*div {
+    display: block;
+}*/

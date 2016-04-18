@@ -1,0 +1,59 @@
+<nav class="navbar navbar-default navbar-static-top navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Brand</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Admin</a></li>
+                <li><a ng-click="logout()"><span class="glyphicon glyphicon-off"></span> LogOut</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div ng-repeat="r in tmpUser.tasks" class="container-fluid welcome">
+    <h2 class="lead text-center" style="font-size: 30px"><span>Task:</span><span>{{r.name}}</span></h2>
+
+    <div class=" container-fluid well">
+        <div style="float: right">
+            <span class="lead text-primary">Status:</span>
+            <span ng-show="r.status" class="lead">Complete</span>
+            <span ng-hide="r.status" class="lead">InComplete</span>
+            <br><br>
+            <form class="form-inline">
+                <span class="lead text-primary">Ratings: </span>
+                <select ng-model="tmpUser.tasks[$index].ratings" ng-change="saveData()" ng-options="r for r in ratingArr" class="form-control lead" style="clear: both; vertical-align: top">
+                    <option value="" disabled class="lead">Give Rating</option>
+                </select>
+            </form>
+        </div>
+
+        <div ng-repeat="c in tmpUser.tasks[$index].comments track by $index">
+            <span class="text-primary lead"> {{c.type == 'user' ? tmpUser.name : 'Admin'}}</span>: <span class="lead">{{c.comment}}</span>
+        </div>
+        <form class="form-inline">
+            <div class="form-group">
+                <input type="text" ng-model="comment.msg" class="form-control" placeholder="Write a Comment..">
+            </div>
+            <button ng-click="Addcomment($index,comment)" class="btn btn-success">Add Comments</button>
+        </form>
+
+    </div>
+
+</div>
+
+
+<nav class="container-fluid">
+    <ul class="pager">
+        <li class="previous" ng-click="back()"><a><span aria-hidden="true">&larr;</span> Back</a></li>
+    </ul>
+</nav>
+<!--
+<button ng-click="back()" class="btn btn-default">back</button>
+</div>-->
